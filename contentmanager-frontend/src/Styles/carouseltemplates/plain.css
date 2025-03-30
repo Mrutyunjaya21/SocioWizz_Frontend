@@ -1,0 +1,117 @@
+/* plain.css */
+
+.preview_carousel-page.plain-pages h2 {
+  /* minimal, easy style */
+  font-family: var(--titleFont, 'Arial'), sans-serif;
+}
+.intro-title-container {
+  width: 100%;
+}
+
+
+.preview_carousel-page.plain-pages p {
+  font-family: var(--bodyFont, 'Helvetica'), sans-serif;
+}
+
+
+/* If you want a next arrow or brand icon,
+ keep them consistent or minimal.
+ This is optional if you want special styling. */
+.preview_carousel-page.plain-pages .next-arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--arrowColor, #bbb);
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+  font-weight: bold;
+}
+
+.preview_carousel-page.plain-pages .brand-icon {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  color: var(--textColor, #444);
+}
+
+.preview_carousel-page .intro-title,
+.preview_carousel-page .outro-title {
+  font-size: 40px; /* Initial size */
+  text-align: var(--textAlign, left);
+  max-width: 90%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  height: auto;
+  overflow: hidden;
+  display: block;
+  max-width: 90%;
+  text-overflow: ellipsis;
+}
+
+.preview_carousel-page .intro-subtitle,
+.preview_carousel-page .outro-subtitle {
+  font-size: 12px; /* Initial size */
+  text-align: var(--textAlign, left);
+  max-width: 90%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  overflow: hidden;
+  display: block;
+  max-width: 90%;
+  text-overflow: ellipsis;
+}
+
+.preview_carousel-page .intro-description,
+.preview_carousel-page .outro-description {
+  font-size: 16px; /* Initial size */
+  text-align: var(--textAlign, left);
+  max-width: 90%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  overflow: hidden;
+  display: block;
+  max-width: 90%;
+  text-overflow: ellipsis;
+}
+
+.preview_carousel-page .normal-title,
+.preview_carousel-page .quotes-title {
+  font-size: 30px; /* Initial size */
+  text-align: var(--textAlign, left);
+  max-width: 90%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  overflow: hidden;
+  display: block;
+  max-width: 90%;
+  text-overflow: ellipsis;
+}
+
+.preview_carousel-page.plain-pages h2 {
+  font-family: var(--titleFont, 'Arial'), sans-serif;
+}
+
+
+.preview_carousel-page.plain-pages .intro-title,
+.preview_carousel-page.plain-pages .intro-subtitle,
+.preview_carousel-page.plain-pages .intro-description,
+.preview_carousel-page.plain-pages .normal-title,
+.preview_carousel-page.plain-pages .normal-description,
+.preview_carousel-page.plain-pages .quotes-title,
+.preview_carousel-page.plain-pages .quotes-box,
+.preview_carousel-page.plain-pages .outro-title,
+.preview_carousel-page.plain-pages .outro-subtitle,
+.preview_carousel-page.plain-pages .outro-cta {
+  /* No need to set font-size here anymore, it's set dynamically in component style attribute */
+  text-align: var(--textAlign);
+  margin: 0; /* Reset default margins for better control */
+  padding: 0; /* Reset default paddings */
+}

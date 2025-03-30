@@ -1,0 +1,501 @@
+/* ==========================================
+   carousel.css
+   Common / Structural CSS for ALL templates
+   ========================================== */
+
+/*
+   Keeping your existing container sizes,
+   layout, and the general arrangement.
+*/
+
+/* If you have a page container in the overall layout */
+.carousel-page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Carousel Container */
+.carousel-container {
+  width: 85vw;
+  height: calc(100vh - 5vh);
+  margin-top: 5vh;
+  margin-left: auto;
+  background-color: #f9f9fd;
+  overflow-y: auto;
+  box-sizing: border-box;
+  display: flex;
+}
+
+/* Control Panel (same structure for all templates) */
+.control-panel {
+  height: 98%;
+  width: 20vw;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 1vh 0px 0px 1vh;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.panel-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Template options grid */
+.template-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.template-block {
+  width: 100%;
+  padding-top: 100%; /* keep them square */
+  background-color: #d9d9d9;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.template-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.template-block.selected {
+  border: 2px solid #6359e9;
+}
+.template-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover; /* if using an actual <img> */
+}
+
+/* Color Pickers & Presets */
+.color-custom-row input[type='color'] {
+  width: 33%;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.color-custom-row {
+  display: flex;
+  width: 100%; /* Ensure it spans the full container */
+}
+
+.color-presets-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.color-preset-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.color-preset-group-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+.color-preset-row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.color-preset-box {
+  display: flex;
+  gap: 2px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 2px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+.color-preset-box:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.color-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+}
+
+/* Range Input (for font size) */
+input[type='range'] {
+  width: 100%;
+  margin: 8px 0;
+}
+
+
+.text-size-icons,
+.text-align-options-icons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start; /* Align buttons to the start */
+}
+
+.text-size-icon,
+.align-icon {
+  display: flex;          /* Center icon and text */
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  color: #333;
+  font-size: 1em; /* Adjust as needed */
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.text-size-icon.active,
+.align-icon.active {
+  background-color: #e0e0e0; /* Slightly darker when active */
+  border-color: #999;
+}
+
+.text-size-icon:hover,
+.align-icon:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* Reorder & Save/Post Buttons */
+.bottom-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.reorder-icon {
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #eee;
+  border-radius: 4px;
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  transition: background-color 0.2s ease;
+}
+.reorder-icon:hover {
+  background-color: #ddd;
+}
+
+.reorder-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  transition: background-color 0.2s ease;
+  justify-content: center; /* Center content horizontally */
+}
+
+.reorder-container:hover {
+  background-color: #f0f0f0;
+}
+
+
+.save-post-row {
+  display: flex;
+  gap: 10px;
+}
+.save-button,
+.post-button {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+.save-button {
+  background-color: black;
+}
+.post-button {
+  background-color: black;
+}
+.save-button:hover {
+  background-color: #4f46e5;
+}
+.post-button:hover {
+  background-color: #4f46e5;
+}
+
+/* ======= PREVIEW PANEL ======= */
+.preview_panel {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center the carousel */
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* IMPORTANT: clip pages */
+  background-color: #ffffff;
+  height: 100%;
+}
+
+/* Prev / Next Carousel Nav Buttons */
+.preview_carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.preview_carousel-nav-btn.prev {
+  left: 10px;
+}
+.preview_carousel-nav-btn.next {
+  right: 10px;
+}
+.preview_carousel-nav-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Carousel Track */
+.preview_carousel {
+  display: flex;
+  height: 100%;
+  position: relative;
+  overflow: hidden; /* Clip inner track */
+  margin: 0 auto; /* Center the carousel in preview panel */
+  width: 80%;
+  background-color: #f9f9fd;
+}
+.preview_carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Smooth transition - adjust duration if needed */
+  align-items: center; /* Vertically center pages */
+  height: 100%;
+  width: 75vw; /* 50% for active page + 25% each for prev/next */
+  padding: 0 25%; /* Add padding for 25% left/right zones */
+  box-sizing: border-box; /* Include padding in width calculation */
+  /* transform: translateX(0); // Initial position - can be set here or in JS */
+}
+
+/* Default styling for each page (flex item) */
+.preview_carousel-page {
+  width: 35vw; /* Each page takes exactly 35% of the viewport width */
+  flex-shrink: 0;   /* Prevent pages from shrinking */
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 80%; /* keep your original measurement */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; /* Slightly slower transition */
+  position: relative;
+  margin: 0 0%; /* No horizontal margin between pages WITHIN the track */
+  border-radius: 12px;
+  overflow: hidden; /* Clip content within page */
+  box-sizing: border-box; /* Ensure padding/border included in page width */
+
+
+  background-color: var(--bgColor, white);
+  color: var(--textColor, #333);
+  text-align: var(--textAlign, center);
+  font-family: var(--bodyFont, sans-serif);
+  /* Font size is now set dynamically in component style */
+}
+
+.preview_carousel-page.active {
+  opacity: 1;
+  transform: scale(1);       /* Full scale for active page */
+}
+
+
+/* If no template is selected or no pages, show placeholder */
+.preview_carousel-placeholder {
+  width: 100%;
+  text-align: center;
+}
+
+/* Title & Paragraph defaults */
+.preview_carousel-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--textColor, #333);
+
+  /* Use the title font if set */
+  font-family: var(--titleFont, sans-serif);
+}
+.preview_carousel-text {
+  font-size: 16px;
+  color: var(--textColor, #555);
+  font-family: var(--bodyFont, sans-serif);
+}
+
+/* Inline editing hover styles */
+.preview_carousel-heading[contenteditable='true'],
+.preview_carousel-text[contenteditable='true'] {
+  outline: none;
+  border: 1px dashed transparent;
+  transition: border-color 0.2s;
+}
+.preview_carousel-heading[contenteditable='true']:hover,
+.preview_carousel-text[contenteditable='true']:hover {
+  border-color: #999;
+}
+
+/* Slide Icons (Add / Delete / Duplicate) at top-right */
+.slide-icons {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 8px;
+}
+.slide-icon {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+.slide-icon:hover {
+  background-color: #f0f0f0;
+}
+/* If you want to show them disabled, you can add a .disabled class */
+.slide-icon.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+/* Reorder Mode Styles */
+.reorder-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.reorder-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.reorder-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background-color: #f9f9f9;
+}
+
+.reorder-controls button {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 8px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.reorder-controls button:hover {
+  background-color: #ddd;
+}
+.reorder-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.reorder-done-button {
+  padding: 10px 15px;
+  background-color: #6359e9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.reorder-done-button:hover {
+  background-color: #4f46e5;
+}
+
+/* Font Selection Dropdown */
+.font-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Styled Dropdown */
+.styled-dropdown {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover & Focus Effects */
+.styled-dropdown:hover {
+  background-color: #e0e0e0;
+}
+
+.styled-dropdown:focus {
+  border-color: #6359e9;
+  box-shadow: 0 0 5px rgba(99, 89, 233, 0.4);
+}
+
+/* Dropdown Arrow */
+.styled-dropdown::-ms-expand {
+  display: none;
+}

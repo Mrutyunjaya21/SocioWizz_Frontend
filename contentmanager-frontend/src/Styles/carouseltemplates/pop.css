@@ -1,0 +1,45 @@
+    /* Title override for pop */
+  .preview_carousel-page.pop-pages h2 {
+    /* Let's do a funky fallback font: Comic Sans or similar */
+    font-family: var(--titleFont, 'Comic Sans MS'), cursive;
+    font-size: calc(var(--baseFontSize, 16px) + 10px);
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--textColor, #ff00ff);
+    /* Possibly a text-shadow for a pop effect */
+  }
+  
+  /* Paragraph override for pop */
+  .preview_carousel-page.pop-pages p {
+    font-family: var(--bodyFont, 'Tahoma'), sans-serif;
+    font-size: calc(var(--baseFontSize, 16px) + 2px);
+    color: var(--textColor, #e600e6);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    /* Maybe a subtle text-shadow too? */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* next-arrow & brand-icon in pop style */
+  .preview_carousel-page.pop-pages .next-arrow {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--arrowColor, #f0f);
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+  }
+  
+  .preview_carousel-page.pop-pages .brand-icon {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: calc(var(--baseFontSize, 16px) - 2px);
+    color: var(--textColor, #ff00ff);
+  }
+  

@@ -1,0 +1,161 @@
+.calendar-page {
+    background-color: #f5f5f5;
+  }
+
+  .calendar-container {
+    width: 83vw; /* Sidebar width + margin */
+    margin-top: 6vh;
+    height: 94vh;
+    background-color: white; 
+    margin-left: 16vw;
+    overflow-y: auto; 
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+  }
+
+/*Calendar.jsx styles*/
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.platform-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.platform-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+}
+
+.platform-icon.linkedin {
+  width: 25px;
+  height: 25px;
+}
+
+.platform-icon.twitter {
+  width: 25px;
+  height: 25px;
+}
+
+.week-view {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow-x: hidden;
+}
+
+.day-column {
+  flex: 1;
+  max-width: 200px; /* Set a fixed maximum width */
+  margin: 0 10px;
+  height: 400px; /* Set a fixed height */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.day-header {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  padding: 0 0;
+}
+
+.calendar-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px 0px 10px;
+}
+
+button.nav-button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.calendar-line {
+  border: none;
+  border-top: 1px solid lightgrey;
+  margin: 0px 0;
+}
+
+.post-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  width: calc(100% - 24px); /* Adjust width to fit within day-column */
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.post-card-icons {
+  display: flex;
+  gap: 8px;
+ 
+}
+
+.card-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 20%;
+}
+
+.post-content {
+  font-size: 12px;
+  color: #909090;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Webkit-specific */
+  line-clamp: 2; /* Standard property */
+  -webkit-box-orient: vertical;
+  box-orient: vertical; /* Standard property */
+  max-height: 2.6em; /* Fallback for browsers that don't support line-clamp */
+}
+
+.no-platform-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Adjust height as needed */
+  font-size: 4rem; /* Large font size */
+  font-weight: bold; /* Bold font */
+  color: #333; /* Adjust color as needed */
+  text-align: center;
+  margin-top: 100px;
+}
+

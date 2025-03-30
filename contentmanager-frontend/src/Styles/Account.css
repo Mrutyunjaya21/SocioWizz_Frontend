@@ -1,0 +1,133 @@
+/* Parent Container */
+.account-container {
+    width: 85vw; /* Sidebar width (270px) + 20px margin */
+    height: 95vh; /* Full height minus margins */
+    margin: 5vh 0px 0px auto; /* Adjusted right margin */
+    background-color: white;
+    border: 1px solid #D3D3D3; /* Light border */
+    box-sizing: border-box;
+    display: flex; /* To enable equal division */
+    flex-direction: column; /* Align title and sections vertically */
+    gap: 20px; /* Space between title and content */
+    padding: 20px; /* Inner padding */
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #D3D3D3;
+    padding-bottom: 20px;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #D3D3D3;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.user-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.user-username {
+    font-size: 16px;
+    color: #6366F1;
+    margin: 5px 0 0 0;
+}
+
+/* Linked Accounts Section */
+.linked-accounts {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.linked-accounts h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.account-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.account-item a {
+    color: #6366F1;
+    text-decoration: none;
+}
+
+.account-item a:hover {
+    text-decoration: underline;
+}
+
+/* Actions Section */
+.account-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.action-button {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button {
+    background-color: #6366F1;
+}
+
+.logout-button:hover {
+    background-color: #4F46E5;
+}
+
+.delete-account-button {
+    background-color: #D66EED;
+}
+
+.delete-account-button:hover {
+    background-color: #B753D9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-picture {
+        margin-bottom: 10px;
+    }
+
+    .account-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

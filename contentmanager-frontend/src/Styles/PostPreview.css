@@ -1,0 +1,199 @@
+/* Squared box for preview header */
+.post-preview-area {
+  background-color: #f9f9fd;
+  width: 49%; /* 2% smaller than the sidebar width */
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 5vh - 2%); /* 2% smaller in height than the sidebar */
+  margin-top: 6vh; /* Align it to start where the sidebar starts */
+  margin-left: 1vh;
+  box-sizing: border-box;
+}
+
+.preview-header-box {
+  height: 3.5vh;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: space-between; /* Space between the title and icons */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  width: 100%;
+}
+
+.preview-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.device-icons-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add some space between icons */
+}
+
+.device-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Ensure the border-radius is applied */
+  border: 2px solid transparent; /* Default border */
+}
+.device-icon.selected {
+  background-color: rgba(115, 220, 255, 0.3); /* Light blue with 0.2 opacity */
+}
+
+.device-icon .MuiSvgIcon-root {
+  color: rgba(103, 151, 255, 0.992); /* Light blue color for the icon */
+}
+/* Squared box for post content */
+.post-content-box {
+  height: 100%; /* Match height of .write-post-container minus 10vh margin */
+  display: flex;
+  justify-content: center; /* Center the post-box horizontally */
+  align-items: flex-start; /* Align the post-box to the top */
+  padding-top: 30px;
+}
+
+
+.post-box {
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  background-color: #fff;
+  transition: transform 2s ease;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-box.mobile {
+  width: 50vh; 
+}
+
+.post-box.tablet {
+  width: 55vh; 
+}
+
+.post-box.laptop {
+  width: 65vh;
+}
+.content.mobile {
+  overflow: auto;
+  height: 10vh;
+}
+
+.content.tablet {
+  overflow: auto;
+  height: 20vh;
+}
+
+.content.laptop {
+  overflow: auto;
+  height: 30vh;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.linkedin-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.time-text {
+  font-size: 14px;
+  color: #555;
+}
+
+.world-icon {
+  margin-left: 5px;
+  width: 12px;
+  height: 12px;
+}
+
+.content {
+  margin-top: 10px;
+}
+
+.text-display {
+  font-size: 16px;
+  color: #333;
+  white-space: pre-wrap;
+  height: 20vh;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.reactions-comments {
+  display: flex;
+  align-items: center;
+}
+
+.reactions-image {
+  width: 40px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.comments-repost {
+  color: #555;
+}
+
+.solid-line {
+  border: none;
+  border-top: 1px solid #e1e4e8;
+  margin: 15px 0;
+}
+
+.interaction-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview-action-button {
+  background: none;
+  font-weight: bold;
+  border: none;
+  color: #000000;
+  font-size: 14px;
+  cursor: pointer;
+}

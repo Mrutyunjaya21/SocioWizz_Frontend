@@ -1,0 +1,18 @@
+.create-post-container {
+  display: flex;
+  height: 100vh; /* Avoid full viewport scroll */
+  width: 100vw; /* Post container takes up 85% of viewport width */
+  margin-right: 0; /* Remove any right margin to avoid gap */
+  box-sizing: border-box;
+  background: #F9F9FD;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  background: #F9F9FD;
+}
+
+.post-preview-area {
+  width: 50%;
+}

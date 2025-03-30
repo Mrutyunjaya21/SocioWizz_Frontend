@@ -1,0 +1,204 @@
+.write-post-container {
+  padding:20px;
+  background-color: white;
+  height: calc(95vh - 2%);
+  margin-left: 16vw;
+  width: 49%; /* 2% smaller than the sidebar width */
+  display: flex;
+  flex-direction: column;
+  margin-top: 6vh; /* Align it to start where the sidebar starts */
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+  
+  .write-post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .write-post-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .write-post-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+  .logo-x {
+    width: 41px;
+    height: 30px;
+  }
+  .write-post-line {
+    border: none;
+    border-top: 1px solid lightgrey;
+    margin: 10px 0;
+  }
+  
+  .editor-container {
+    flex-grow: 1; /* Increase this value to make the editor larger */
+    margin-top: 10px;
+  }
+  
+  .editor {
+    height: 100%; /* Ensures the editor fills the available space */
+  }
+  
+  .semi-solid-line {
+    border: none;
+    border-top: 1px dashed lightgrey;
+    margin: 10px 0;
+  }
+  
+  .timestamp {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: grey;
+  }
+ 
+  
+  .button {
+    all: unset;
+    padding: 8px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Reset any margin */
+    box-sizing: border-box; /* Ensure padding and border are included in width/height */
+  }
+  
+  .draft-button {
+    background-color: #F5F5F5; /* Light grey background */
+    color: #000; /* Black text */
+    border: none;
+  }
+  
+  .schedule-button {
+    background-color: #FFFFFF; /* White background */
+    color: #000; /* Black text */
+    border: 1px solid #D1D5DB; /* Light grey border */
+  }
+  
+  .publish-button {
+    background-color: #6366F1; /* Purple background */
+    color: #FFFFFF; /* White text */
+    border: none;
+  }
+  
+  .left-button,
+  .right-buttons {
+    display: flex;
+    align-items: center; /* Vertically center the buttons */
+  }
+  
+  .editor-toolbar .active .MuiSvgIcon-root {
+    color: #6366F1; /* Change to desired active color */
+  }
+  
+  .emoji-picker-container {
+    position: absolute;
+    z-index: 1000; /* Ensure it appears above other content */
+  }
+  
+  .dark-mode {
+    background-image: linear-gradient(to bottom, white 50%, rgba(0, 0, 255, 0.1) 50%);
+    background-position: 0 100%; /* Start with the gradient positioned at the bottom */
+    background-size: 100% 200%; /* The background size is double the height of the container */
+    transition: background-position 2s;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.modal-input-container {
+  margin-bottom: 1rem;
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #4B5563;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.modal-button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-button.cancel {
+  background-color: #F3F4F6;
+  color: #4B5563;
+  border: 1px solid #D1D5DB;
+}
+
+.modal-button.cancel:hover {
+  background-color: #E5E7EB;
+}
+
+.modal-button.confirm {
+  background-color: #6366F1;
+  color: white;
+  border: none;
+}
+
+.modal-button.confirm:hover {
+  background-color: #4F46E5;
+}

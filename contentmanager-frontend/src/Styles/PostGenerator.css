@@ -1,0 +1,168 @@
+/* Parent Container */
+.post-generator-container {
+  width: 85vw;
+  height: 90vh;
+  margin: 5vh 0px 0px 15vw ;
+  padding: 20px;
+  background: #f9f9fd;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.generator-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.generator-header h1 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+  color: #6b7280;
+}
+
+/* Content */
+.generator-content {
+  display: flex;
+  gap: 20px;
+}
+
+/* Left Panel */
+.generator-left {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Labels */
+.field-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Input Fields */
+.input-field,
+.textarea-field {
+  width: 95%;
+  min-height: 2%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-top: 5px;
+}
+
+/* Tone & Audience Selection */
+.selection-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.selection-item {
+  flex: 1;
+  max-width: 8vw;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background: #f8f9fa;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.selection-item:hover {
+  background: #e2e6ea;
+}
+
+.selection-item.selected {
+  background: black;
+  color: white;
+}
+
+/* Button */
+.generate-button,
+.use-text-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.use-text-button {
+  background-color: #28a745;
+}
+
+/* Right Panel */
+.generator-right {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.generated-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.generated-box {
+  width: 100%;
+  height: 60vh;
+  background: #f8f8f8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.generated-text {
+  padding: 10px;
+  font-size: 14px;
+  color: black;
+}
+
+.empty-preview {
+  text-align: center;
+  color: #6b7280;
+}
+
+.preview-icon {
+  height: 40px;
+  width: 40px;
+  margin-bottom: 10px;
+  color: #9ca3af;
+}
+
+/* Disable Button */
+.use-text-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

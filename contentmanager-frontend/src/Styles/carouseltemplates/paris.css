@@ -1,0 +1,49 @@
+
+  .preview_carousel-page.paris-pages h2 {
+    /* If you want a fallback color or bigger size than the default: */
+    color: var(--textColor, #483d8b); /* dark slate blue fallback */
+    font-size: calc(var(--baseFontSize, 16px) + 10px);
+    font-family: var(--titleFont, 'Georgia'), serif;
+    margin-bottom: 10px;
+  }
+  
+  /* Override paragraph <p> for paris */
+  .preview_carousel-page.paris-pages p {
+    font-size: calc(var(--baseFontSize, 16px) + 2px);
+    color: var(--textColor, #696969); /* dim gray fallback */
+    font-family: var(--bodyFont, 'Times New Roman'), serif;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* If you want a special .quotes-box style for Paris */
+  .preview_carousel-page.paris-pages .quotes-box {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Next arrow for Intro page in paris */
+  .preview_carousel-page.paris-pages .next-arrow {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--arrowColor, #d3d3d3);
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Brand icon bottom-left for Paris */
+  .preview_carousel-page.paris-pages .brand-icon {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: calc(var(--baseFontSize, 16px) - 2px);
+    color: var(--textColor, #696969);
+  }
+  

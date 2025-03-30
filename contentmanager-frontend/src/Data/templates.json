@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "name": "Plain",
+      "cssClass": "template-plain"
+    },
+    {
+      "id": 2,
+      "name": "Pop",
+      "cssClass": "template-pop"
+    },
+    {
+      "id": 3,
+      "name": "Paris",
+      "cssClass": "template-paris"
+    }
+  ]
+  

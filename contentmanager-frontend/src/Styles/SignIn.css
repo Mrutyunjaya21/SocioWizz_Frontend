@@ -1,0 +1,351 @@
+/* Wrapper to center the container */
+.container-wrapper {
+  position: relative; /* Enables positioning of pseudo-elements */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+}
+
+.container-wrapper::before {
+  content: ''; /* Creates a pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  opacity: 0.5; /* Makes only the background semi-transparent */
+  z-index: -1; /* Ensures it stays behind the content */
+  backdrop-filter: blur(10px); /* Adds the blur effect */
+}
+
+/* Main container with fixed width and height */
+.container {
+  display: flex;
+  flex-direction: row; /* Horizontal layout */
+  width: 70%; /* Total container width */
+  height: 70%; /* Total container height */
+  background-color: #ffffff; /* Optional, if no background is set on parent */
+  border-radius: 16px; /* Rounded corners for overall container */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Equal fixed size for left and right containers */
+.left,
+.right {
+  width: 50%; /* Each container occupies 50% of the parent container */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Left container-specific styling */
+.left {
+  background-color: #ffffff; /* Left container background color */
+  border-top-left-radius: 16px; /* Rounded corners on top left */
+  border-bottom-left-radius: 16px; /* Rounded corners on bottom left */
+  padding: 20px; /* Padding for left container content */
+  text-align: center; /* Center-align text */
+}
+
+/* Right container-specific styling */
+.right {
+  background-color: #6359E9; /* Right container background color */
+  border-top-right-radius: 16px; /* Rounded corners on top right */
+  border-bottom-right-radius: 16px; /* Rounded corners on bottom right */
+  color: #ffffff; /* Text color for right container */
+  text-align: center; /* Center-align text */
+  padding: 20px; /* Padding for right container content */
+}
+
+/* Content inside left container */
+.left .content {
+  width: 100%;
+  max-width: 400px; /* Content width for readability */
+  text-align: center;
+}
+
+.left h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.left h1 span {
+  color: #6359E9;
+}
+
+.left p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #586b4f;
+}
+
+/* Content inside right container */
+.right h1 {
+  font-size: 36px;
+  line-height: 1.5;
+}
+
+/* Ensures both containers remain equally spaced and properly aligned */
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.login {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.signup {
+  background-color: #ff4081;
+  color: white;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+button {
+  padding: 15px 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 40px;
+  width: 100%; 
+}
+
+button.login {
+  background-color: #6359E9;
+  color: #ffffff;
+  border: 1px solid #6359E9;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease;
+}
+
+.login-form {
+  width: 100%; /* Full width of the container */
+  margin-bottom: 20px; /* Add spacing below the form */
+}
+
+.login-form h2 {
+  margin-bottom: 10px; /* Space below the heading */
+  font-size: 18px; /* Adjust heading size */
+  text-align: center;
+  color: #6359E9; /* Matches your theme */
+}
+
+.login-form .form-group {
+  margin-bottom: 10px; /* Space between form fields */
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 5px; /* Spacing below the label */
+  font-size: 14px; /* Smaller font for labels */
+  color: #586b4f;
+}
+
+.login-form input {
+  width: 100%; /* Full width of the input */
+  padding: 8px 12px; /* Inner spacing */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding in width */
+  font-size: 14px; /* Input font size */
+}
+
+.login-form .login:hover {
+  background-color: #2c387e; /* Darker shade on hover */
+}
+
+
+/* Signup Form Container */
+.signup-form {
+  display: flex; /* Add this to enable flexbox layout */
+  flex-direction: column; /* Stack children vertically */
+  width: 100%; /* Full width of the parent container */
+  margin: 0 auto; /* Center align the form */
+  text-align: center; /* Align text to center */
+  margin-bottom: 20px; /* Spacing below the form */
+}  
+
+/* Form Group Spacing */
+.signup-form .form-group {
+  margin-bottom: 15px; /* Space between fields */
+  width: 100%; /* Take full width of the parent */
+}
+
+/* Input Fields */
+.signup-form input {
+  width: 100%; /* Full width of the input field */
+  padding: 8px 12px; /* Inner padding */
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px; /* Input font size */
+  box-sizing: border-box; /* Include padding in width */
+  background-color: rgba(255, 255, 255, 0.9); /* Light background */
+}
+
+/* Submit Button */
+.signup-form .buttons {
+  width: 100%; /* Full width of the container */
+  display: flex;
+  justify-content: center; /* Center the button */
+}
+
+.signup-form .submit {
+  padding: 15px 10px; /* Adjust padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex;
+  gap: 10px; /* Space between button content */
+  height: 40px; /* Fixed height */
+  background-color: #6359E9; /* Button background color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+.signup-form .submit:hover {
+  background-color: #4e46c4; /* Slightly darker shade on hover */
+}
+
+/* Signup Text */
+.signup-form .signup-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #586b4f; /* Subtle text color */
+}
+
+.signup-form .signup-text a {
+  color: #6359E9; /* Link color */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.or-separator {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.or-separator .line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #000;
+}
+
+.or-separator .or {
+  margin: 0 10px;
+  color: #586b4f;
+  font-weight: bold;
+}
+
+/* Wrapper for the buttons */
+.social-buttons {
+  display: flex;
+  gap: 15px; /* Spacing between buttons */
+  width: 100%; /* Make buttons span the container width */
+  padding: 0 40px; /* Adds padding on the left and right */
+  box-sizing: border-box; /* Ensures padding doesn't affect the total width */
+}
+
+/* Equal box sizes for each button */
+button.continue-google,
+button.continue-linkedin,
+button.continue-x {
+  flex: 1; /* Equal width for all buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 50px;
+}
+
+button.continue-google {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #cccccc;
+}
+
+button.continue-linkedin {
+  background-color: #0077b5;
+  color: #ffffff;
+  border: none;
+}
+
+button.continue-x {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  outline: none;
+  z-index: 1001;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal .form-group {
+  margin-bottom: 15px;
+}
+
+.modal label {
+  margin-bottom: 5px;
+}
+
+.modal input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}

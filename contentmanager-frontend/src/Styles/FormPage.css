@@ -1,0 +1,64 @@
+.form-page {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('../Assets/leaves-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 60%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 15px;
+  background: linear-gradient(to right, #0ABFBC, #90F485);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-page .form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-page label {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.form-page input {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-page input:focus {
+  border-color: #0ABFBC;
+}
+
+.form-page .button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-page button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 25px;
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-page button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
