@@ -1,9 +1,11 @@
 /* Parent Container */
 .account-container {
-    width: 85vw; /* Sidebar width (270px) + 20px margin */
-    height: 95vh; /* Full height minus margins */
-    margin: 5vh 0px 0px auto; /* Adjusted right margin */
+    width: calc(100% - 290px); /* Sidebar width (270px) + 20px margin */
+    height: calc(100vh - 36px); /* Full height minus margins */
+    margin: 18px 15px 18px auto; /* Adjusted right margin */
     background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     border: 1px solid #D3D3D3; /* Light border */
     box-sizing: border-box;
     display: flex; /* To enable equal division */

@@ -1,45 +1,79 @@
-    /* Title override for pop */
-  .preview_carousel-page.pop-pages h2 {
-    /* Let's do a funky fallback font: Comic Sans or similar */
-    font-family: var(--titleFont, 'Comic Sans MS'), cursive;
-    font-size: calc(var(--baseFontSize, 16px) + 10px);
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: var(--textColor, #ff00ff);
-    /* Possibly a text-shadow for a pop effect */
-  }
-  
-  /* Paragraph override for pop */
-  .preview_carousel-page.pop-pages p {
-    font-family: var(--bodyFont, 'Tahoma'), sans-serif;
-    font-size: calc(var(--baseFontSize, 16px) + 2px);
-    color: var(--textColor, #e600e6);
-    line-height: 1.6;
-    margin-bottom: 20px;
-    /* Maybe a subtle text-shadow too? */
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3);
-  }
-  
-  /* next-arrow & brand-icon in pop style */
-  .preview_carousel-page.pop-pages .next-arrow {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--arrowColor, #f0f);
-    color: #fff;
+/* Pop Template */
+
+/* General Carousel Page Styling */
+.preview_carousel-page.pop-pages {
+    background-color: #e5e5f7; /* Base color */
+    background-image: radial-gradient(circle at center center, #f74596, #e5e5f7), 
+                      repeating-radial-gradient(circle at center center, #f74596, #f74596 10px, transparent 20px, transparent 10px);
+    background-blend-mode: multiply;
+    opacity: 0.5; /* Transparency */
+    border: 2px solid #ff6347; /* Tomato border */
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(255, 99, 71, 0.5); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     text-align: center;
-    line-height: 40px;
+}
+
+/* Heading Styling */
+.preview_carousel-page.pop-pages h2 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 28px;
     font-weight: bold;
-  }
-  
-  .preview_carousel-page.pop-pages .brand-icon {
+    color: #ff4500; /* Orange red */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Text Styling */
+.preview_carousel-page.pop-pages p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 18px;
+    color: #000000;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Optional Background Decoration */
+.preview_carousel-page.pop-pages .decorative-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #ff4500;
+    border-radius: 50%;
     position: absolute;
+    top: 20px;
     left: 20px;
-    bottom: 20px;
-    font-size: calc(var(--baseFontSize, 16px) - 2px);
-    color: var(--textColor, #ff00ff);
-  }
-  
+}
+
+/* Thumbnail for Pop Template */
+.template-thumbnail.pop-thumbnail {
+    width: 100%; /* Matches template box size */
+    height: 100%;
+    background-color: #e5e5f7;
+    background-image: radial-gradient(circle at center center, #f74596, #e5e5f7), 
+                      repeating-radial-gradient(circle at center center, #f74596, #f74596 10px, transparent 20px, transparent 10px);
+    background-blend-mode: multiply;
+    border: 2px solid #ff6347;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Thumbnail Heading */
+.template-thumbnail.pop-thumbnail .preview_carousel-heading {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff4500;
+    margin-bottom: 5px;
+}
+
+/* Thumbnail Text */
+.template-thumbnail.pop-thumbnail .preview_carousel-text {
+    font-size: 12px;
+    color: #000000;
+}

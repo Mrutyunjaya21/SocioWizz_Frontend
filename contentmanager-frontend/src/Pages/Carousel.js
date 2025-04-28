@@ -1,25 +1,19 @@
 import React from 'react';
 import Sidebar from '../Components/SideBar';
-import TopBar from '../Components/Topbar';
 import Carousel from '../Components/Carousel';
 import '../Styles/Carousel.css';
 
 const CarouselPage = () => {
     return (
-        <div className="carousel-page-container">
-            {/* Top Bar */}
-            <TopBar />
-
-            {/* Main Content */}
-            <div className="main-content">
-                {/* Sidebar */}
+        <div className="carousel-post-container">
+            <div className='sidebar-carousel'>
                 <Sidebar />
-
-                {/* Carousel Content */}
+            </div>
+            <div className="carousel-container-generator">
                 <Carousel />
             </div>
         </div>
     );
-};
+}
 
 export default CarouselPage;

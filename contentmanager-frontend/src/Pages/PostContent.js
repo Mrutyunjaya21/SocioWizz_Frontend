@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../Styles/CreatePost.css';
-import TopBar from '../Components/Topbar';
 import Sidebar from '../Components/SideBar'; // Adjust the path as necessary
 import WritePost from '../Components/WritePost';
 import PostBox from '../Components/PostPreview';
@@ -19,8 +18,6 @@ const PostContent = () => {
 
   return (
     <div className="create-post-container">
-      {/* Top Bar */}
-      <TopBar />
       <div className='sidebar-postpage'>
         <Sidebar />
       </div> {/* Sidebar component is now included here */}

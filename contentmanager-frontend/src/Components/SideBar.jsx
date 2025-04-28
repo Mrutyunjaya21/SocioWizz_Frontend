@@ -7,8 +7,8 @@ import ViewCarouselIcon from '@mui/icons-material/ViewCarousel';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import UpgradeIcon from '@mui/icons-material/Upgrade';
-import LinkIcon from '@mui/icons-material/Link'; // Icon for affiliate link
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SettingsIcon from '@mui/icons-material/Settings';
 import '../Styles/Sidebar.css';
 
 function Sidebar() {
@@ -18,17 +18,7 @@ function Sidebar() {
   const calendar = () => navigate('/calendar');
   const ai_post_generator = () => navigate('/generate');
   const carousel = () => navigate('/slide');
-  const repurpose = () => navigate('/repurpose'); // Add navigate function for Repurpose
-  const analytics = () => navigate('/analytics'); // Analytics navigation
-
-
-  const handleUpgrade = () => {
-    navigate('/billing'); // Redirect to Billing page
-  };
-
-  const handleAffiliate = () => {
-    window.open('https://www.sociowizz.com/', '_blank'); // Affiliate external link
-  };
+  const account = () => navigate('/account'); // Added navigation function for Account Page
 
   return (
     <div className="sidebar">
@@ -62,7 +52,7 @@ function Sidebar() {
           </div>
         </ListItem>
 
-        <ListItem className="sidebar-list-item" onClick={analytics}>
+        <ListItem className="sidebar-list-item">
           <div className="icon-wrapper">
             <AnalyticsIcon className="sidebar-icon" />
           </div>
@@ -80,7 +70,7 @@ function Sidebar() {
           </div>
         </ListItem>
 
-        <ListItem className="sidebar-list-item" onClick={repurpose}>
+        <ListItem className="sidebar-list-item" style={{ marginBottom: '56px' }}>
           <div className="icon-wrapper">
             <CheckCircleIcon className="sidebar-icon" />
           </div>
@@ -90,23 +80,23 @@ function Sidebar() {
         </ListItem>
       </List>
 
-      {/* Upgrade and Affiliate buttons at the Bottom */}
+      {/* Accounts & Settings at the Bottom */}
       <div className="sidebar-bottom">
-        <ListItem className="sidebar-list-item" onClick={handleUpgrade}>
+        <ListItem className="sidebar-list-item" onClick={account}> {/* Updated onClick */}
           <div className="icon-wrapper">
-            <UpgradeIcon className="sidebar-icon" />
+            <AccountCircleIcon className="sidebar-icon" />
           </div>
           <div className="text-wrapper">
-            <span className="sidebar-text">Upgrade</span>
+            <span className="sidebar-text">Account</span>
           </div>
         </ListItem>
 
-        <ListItem className="sidebar-list-item" onClick={handleAffiliate}>
+        <ListItem className="sidebar-list-item">
           <div className="icon-wrapper">
-            <LinkIcon className="sidebar-icon" />
+            <SettingsIcon className="sidebar-icon" />
           </div>
           <div className="text-wrapper">
-            <span className="sidebar-text">Affiliate</span>
+            <span className="sidebar-text">Settings</span>
           </div>
         </ListItem>
       </div>

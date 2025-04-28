@@ -76,10 +76,10 @@ const PostBox = ({ content, reactionsImg, linkedinImg, profileImg, worldIcon }) 
           </div>
           <hr className="solid-line" />
           <div className="interaction-buttons">
-            <button className="preview-action-button">Like</button>
-            <button className="preview-action-button">Comment</button>
-            <button className="preview-action-button">Share</button>
-            <button className="preview-action-button">Send</button>
+            <button className="action-button">Like</button>
+            <button className="action-button">Comment</button>
+            <button className="action-button">Share</button>
+            <button className="action-button">Send</button>
           </div>
         </div>
       </div>

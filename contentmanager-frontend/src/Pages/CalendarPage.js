@@ -1,25 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Sidebar from '../Components/SideBar'; 
-import TopBar from '../Components/Topbar';
 import Calendar from '../Components/Calendar';
 import '../Styles/Calendar.css';
 
 const CalendarPage = () => {
+
     return (
-        <div className="calendar-page-container">
-            {/* Top Bar */}
-            <TopBar />
-
-            {/* Main Content */}
-            <div className="main-content">
-                {/* Sidebar */}
+        <div className="calendar-page">
+            <div className='sidebar-calendar'>
                 <Sidebar />
-
-                {/* Calendar Content */}
+            </div>
+            <div className="calendar-main">
                 <Calendar />
             </div>
         </div>
     );
-};
+}
 
 export default CalendarPage;

@@ -1,151 +1,124 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MessageSquare } from "lucide-react";
-import "../Styles/PostGenerator.css";
-import { TextContext } from '../Context/TextContext';
-
-const tones = ["Informative", "Professional", "Casual", "Inspirational", "Persuasive"];
-const audiences = ["General", "Marketers", "Students", "Developers", "Entrepreneurs"];
+import '../Styles/PostGenerator.css';
 
 const PostGenerator = () => {
   const navigate = useNavigate();
-  const { setGeneratedText } = useContext(TextContext);
 
   const [topic, setTopic] = useState('');
-  const [wordCount, setWordCount] = useState('');
-  const [tone, setTone] = useState("Informative");
-  const [audience, setAudience] = useState("General");
-  const [keywords, setKeywords] = useState('');
+  const [words, setWords] = useState('');
+  const [tone, setTone] = useState('Informative');
+  const [audience, setAudience] = useState('General');
   const [cta, setCta] = useState('');
-  const [generatedText, setGeneratedTextState] = useState('');
+  const [keywords, setKeywords] = useState('');
+  const [generatedText, setGeneratedText] = useState('');
 
-  const handleGeneratePost = async () => {
-    const payload = JSON.stringify({
+  const handleGeneratePost = () => {
+    const postData = {
       topic,
-      words: wordCount,
+      words,
       tone,
       audience,
       cta,
       keywords,
-    });
-
-    try {
-      const response = await fetch('http://localhost:8000/generate-content/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: payload,
-      });
-      const data = await response.json();
-      setGeneratedTextState(data.generated_content);
-      console.log(data);
-    } catch (error) {
-      console.error('Error generating content:', error);
-    }
+    };
+    console.log('Generated Post:', postData);
+    setGeneratedText(`Your post about "${topic}" with tone "${tone}" is ready.`);
   };
 
   const handleUseText = () => {
-    setGeneratedText(generatedText);
-    navigate('/post');
+    navigate('/post', { state: { generatedText } });
   };
 
   return (
-    <div className="post-generator-container">
-      {/* Header Section */}
-      <div className="generator-header">
-        <MessageSquare className="icon" />
-        <h1>AI Post Generator</h1>
+    <div className="Post-Generator">
+      {/* Title */}
+      <div className="title-container">
+        <h1 className="header-text">AI Post Generator</h1>
       </div>
 
-      {/* Content Section */}
-      <div className="generator-content">
-        {/* Left Panel - Input Form */}
-        <div className="generator-left">
-          <label className="field-label">Post Topic *</label>
+      {/* Main Content: Two Sections */}
+      <div className="content-container">
+        {/* Left Section */}
+        <div className="left-container">
+          <label className="field-label">Enter a topic</label>
           <input
             type="text"
             className="input-field"
-            placeholder="Enter topic (e.g. AI in Marketing)"
+            placeholder="Enter a topic"
             value={topic}
             onChange={(e) => setTopic(e.target.value)}
           />
 
-          <label className="field-label">Word Count *</label>
+          <label className="field-label">Word Count</label>
           <input
             type="number"
             className="input-field"
-            placeholder="Enter word count"
-            value={wordCount}
-            onChange={(e) => setWordCount(e.target.value)}
+            placeholder="Word Count"
+            value={words}
+            onChange={(e) => setWords(e.target.value)}
           />
 
-          {/* Tone Selection */}
-          <label className="field-label">Tone</label>
-          <div className="selection-group">
-            {tones.map((t) => (
-              <button
-                key={t}
-                className={`selection-item ${tone === t ? "selected" : ""}`}
-                onClick={() => setTone(t)}
-              >
-                {t}
-              </button>
-            ))}
-          </div>
+          <label className="field-label">Tone and Audience</label>
+          <div className="tone-audience-row">
+            <select
+              className="tone-dropdown"
+              value={tone}
+              onChange={(e) => setTone(e.target.value)}
+            >
+              <option value="Informative">Informative</option>
+               <option value="Professional">Professional</option>
+              <option value="Casual">Casual</option>
+              <option value="Inspirational">Inspirational</option>
+              <option value="Persuasive">Persuasive</option>
+            </select>
 
-          {/* Audience Selection */}
-          <label className="field-label">Audience</label>
-          <div className="selection-group">
-            {audiences.map((a) => (
-              <button
-                key={a}
-                className={`selection-item ${audience === a ? "selected" : ""}`}
-                onClick={() => setAudience(a)}
-              >
-                {a}
-              </button>
-            ))}
-          </div>
+    <select
+      className="audience-dropdown"
+      value={audience}
+      onChange={(e) => setAudience(e.target.value)}
+    >
+      <option value="General">General</option>
+      <option value="Marketers">Marketers</option>
+      <option value="Students">Students</option>
+      <option value="Developers">Developers</option>
+      <option value="Entrepreneurs">Entrepreneurs</option>
+    </select>
+  </div>
 
-          <label className="field-label">Keywords (Optional)</label>
-          <textarea
-            className="textarea-field"
-            placeholder="Enter keywords"
-            value={keywords}
-            onChange={(e) => setKeywords(e.target.value)}
-          />
+  <div className="keyword-cta-section">
+    <div className="field-container">
+     <label className="field-label">Add Keywords</label>
+      <textarea
+        className="textarea-keywords"
+        placeholder="Add Keywords (optional)"
+        value={keywords}
+        onChange={(e) => setKeywords(e.target.value)}
+     ></textarea>
+    </div>
 
-          <label className="field-label">Call to Action (Optional)</label>
-          <textarea
-            className="textarea-field"
-            placeholder="Enter a Call to Action"
-            value={cta}
-            onChange={(e) => setCta(e.target.value)}
-          />
+    <div className="field-container">
+      <label className="field-label">Call to Action</label>
+      <input
+        type="text"
+      className="cta-input"
+      placeholder="Call to Action (optional)"
+      value={cta}
+        onChange={(e) => setCta(e.target.value)}
+      />
+    </div>
+  </div>
 
-          <button className="generate-button" onClick={handleGeneratePost}>
-            Generate Post
-          </button>
-        </div>
 
-        {/* Right Panel - Generated Content */}
-        <div className="generator-right">
-          <h3 className="generated-header">Generated Post</h3>
-          <div className="generated-box">
-            {generatedText ? (
-              <div className="generated-text">{generatedText}</div>
-            ) : (
-              <div className="empty-preview">
-                <MessageSquare className="preview-icon" />
-                <h2>Answer the prompts</h2>
-                <p>Get the best preview results by filling in the details.</p>
-              </div>
-            )}
-          </div>
-          <button
-            className="use-text-button"
-            onClick={handleUseText}
-            disabled={!generatedText}
-          >
+  <button className="generate-button" onClick={handleGeneratePost}>
+    Generate Post
+  </button>
+</div>
+
+        {/* Right Section */}
+        <div className="right-container">
+          <div className="generated-text">{generatedText}</div>
+          <button className="use-text-button" onClick={handleUseText}>
             Use This Post
           </button>
         </div>

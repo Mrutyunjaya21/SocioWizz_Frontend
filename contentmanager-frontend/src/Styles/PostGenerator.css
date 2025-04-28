@@ -1,168 +1,252 @@
 /* Parent Container */
-.post-generator-container {
-  width: 85vw;
-  height: 90vh;
-  margin: 5vh 0px 0px 15vw ;
-  padding: 20px;
-  background: #f9f9fd;
-  border-radius: 12px;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+.Post-Generator {
+  width: calc(100% - 290px); /* Sidebar width (270px) + 20px margin */
+  height: calc(100vh - 36px); /* Full height minus margins */
+  margin: 18px 15px 18px auto; /* Adjusted right margin */
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border: 1px solid #D3D3D3; /* Light border */
+  box-sizing: border-box;
+  display: flex; /* To enable equal division */
+  flex-direction: column; /* Align title and sections vertically */
+  gap: 20px; /* Space between title and content */
+  padding: 20px; /* Inner padding */
 }
 
-/* Header */
-.generator-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.generator-header h1 {
-  font-size: 22px;
+/* Title Section */
+.header-text {
+  font-size: 24px;
   font-weight: bold;
-  color: #333;
+  text-align: center;
+  margin: 0; /* Remove extra margins */
+  padding: 10px 0; /* Ensure proper spacing */
 }
 
-.icon {
-  height: 24px;
-  width: 24px;
-  color: #6b7280;
-}
-
-/* Content */
-.generator-content {
+/* Content Container (Left + Right) */
+.content-container {
   display: flex;
-  gap: 20px;
+  justify-content: space-between; /* Space between left and right sections */
+  width: 100%;
+  height: calc(100% - 50px); /* Remaining height after title */
+  gap: 20px; /* Add space between left and right sections */
 }
 
-/* Left Panel */
-.generator-left {
-  flex: 1;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+/* Left Container */
+.left-container {
+  flex: 1; /* Both sections will share equal space */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  box-sizing: border-box; /* Ensures padding doesn't affect total width */
 }
 
-/* Labels */
 .field-label {
   font-size: 14px;
-  font-weight: 600;
-  color: #333;
-  margin-top: 10px;
-  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-/* Input Fields */
 .input-field,
-.textarea-field {
-  width: 95%;
-  min-height: 2%;
-  padding: 12px;
-  font-size: 14px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background: #fff;
-  margin-top: 5px;
-}
-
-/* Tone & Audience Selection */
-.selection-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 5px;
-}
-
-.selection-item {
-  flex: 1;
-  max-width: 8vw;
+.dropdown,
+.textarea {
+  width: 80%;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #ccc;
-  background: #f8f9fa;
-  border-radius: 6px;
-  cursor: pointer;
-  text-align: center;
-  transition: all 0.3s ease;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  background-color: white;
 }
 
-.selection-item:hover {
-  background: #e2e6ea;
+.textarea {
+  resize: none;
+  height: 80px;
 }
 
-.selection-item.selected {
-  background: black;
-  color: white;
-}
-
-/* Button */
-.generate-button,
-.use-text-button {
-  width: 100%;
-  padding: 12px;
+.generate-button {
+  flex: 0 0 auto;
+  width: 50%;
+  padding: 10px;
   font-size: 16px;
   font-weight: bold;
   color: white;
-  background-color: black;
+  background-color: #6366f1;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 15px;
+  transition: background-color 0.3s ease;
 }
 
-.use-text-button {
-  background-color: #28a745;
+.generate-button:hover {
+  background-color: #4f46e5;
 }
 
-/* Right Panel */
-.generator-right {
-  flex: 1;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+/* Flex row for tone and audience */
+.tone-audience-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Adds spacing between the two elements */
+}
+
+.tone-dropdown,
+.audience-dropdown {
+  flex: 1; /* Ensures equal width for both elements */
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d3d3d3;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+/* Keyword and CTA Section */
+.keyword-cta-section {
+  display: flex; /* Align items side by side */
+  gap: 15px; /* Add spacing between the two fields */
+  margin-bottom: 20px; /* Add space below this section */
+  width: 100%; /* Ensure the section takes full width */
+}
+
+/* Field Container */
+.field-container {
+  flex: 1; /* Ensure both fields take equal width */
+  display: flex;
+  flex-direction: column; /* Stack the label and input */
+  gap: 8px; /* Add spacing between label and input */
+}
+
+/* Field Labels */
+.field-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  text-align: left; /* Align the labels to the left */
+}
+
+/* Keyword and CTA Section */
+.keyword-cta-section {
+  display: flex; /* Align items side by side */
+  gap: 15px; /* Add spacing between the two fields */
+  margin-bottom: 20px; /* Add space below this section */
+  width: 100%; /* Ensure the section takes full width */
+}
+
+/* Field Container */
+.field-container {
+  flex: 1; /* Ensure both fields take equal width */
+  display: flex;
+  flex-direction: column; /* Stack the label and input */
+  gap: 8px; /* Add spacing between label and input */
+}
+
+/* Field Labels */
+.field-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  text-align: left; /* Align the labels to the left */
+}
+
+/* Keywords Input */
+.textarea-keywords {
+  height: 80px; /* Consistent height for the Add Keywords box */
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d3d3d3; /* Light gray border */
+  background-color: white;
+  box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+/* Call to Action Input */
+.cta-input {
+  height: 80px; /* Match height of Keywords */
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d3d3d3; /* Light gray border */
+  background-color: white;
+  box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+/* Input Field (shared for all input boxes) */
+.input-field,
+.dropdown,
+.textarea-keywords,
+.cta-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d3d3d3; /* Light gray border */
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+  transition: box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect for Input Boxes */
+.input-field:hover,
+.dropdown:hover,
+.textarea-keywords:hover,
+.cta-input:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Focused Effect for Input Boxes */
+.input-field:focus,
+.dropdown:focus,
+.textarea-keywords:focus,
+.cta-input:focus {
+  outline: none; /* Remove default focus border */
+  box-shadow: 0 4px 8px rgba(99, 89, 233, 0.5); /* Highlight shadow for focus */
+  border-color: #6366f1; /* Match focus color */
+}
+
+/* Right Container */
+.right-container {
+  flex: 1; /* Both sections will share equal space */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-}
-
-.generated-header {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.generated-box {
-  width: 100%;
-  height: 60vh;
-  background: #f8f8f8;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  box-sizing: border-box; /* Ensures padding doesn't affect total width */
 }
 
 .generated-text {
+  width: 96%;
+  flex: 1;
   padding: 10px;
   font-size: 14px;
+  font-weight: 600;
   color: black;
+  background-color: #ffffff;
+  border: 1px solid #d3d3d3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+  border-radius: 8px;
+  white-space: pre-wrap;
+  overflow-y: auto;
 }
 
-.empty-preview {
-  text-align: center;
-  color: #6b7280;
+.use-text-button {
+  flex: 0 0 auto;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #d66eed;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.preview-icon {
-  height: 40px;
-  width: 40px;
-  margin-bottom: 10px;
-  color: #9ca3af;
-}
-
-/* Disable Button */
-.use-text-button:disabled {
-  background: #ccc;
-  cursor: not-allowed;
+.use-text-button:hover {
+  background-color: #b753d9;
 }

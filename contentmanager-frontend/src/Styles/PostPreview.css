@@ -1,23 +1,14 @@
 /* Squared box for preview header */
-.post-preview-area {
-  background-color: #f9f9fd;
-  width: 49%; /* 2% smaller than the sidebar width */
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 5vh - 2%); /* 2% smaller in height than the sidebar */
-  margin-top: 6vh; /* Align it to start where the sidebar starts */
-  margin-left: 1vh;
-  box-sizing: border-box;
-}
-
 .preview-header-box {
-  height: 3.5vh;
-  padding: 20px;
+  width: 100%;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+  padding: 15px;
   background-color: #fff;
+  margin-bottom: 15px; /* Adds spacing between the header box and the post content box */
   display: flex;
   align-items: center; /* Align items vertically in the center */
   justify-content: space-between; /* Space between the title and icons */
-  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -29,7 +20,6 @@
 }
 
 .preview-title {
-  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: bold;
   margin: 0;
@@ -59,7 +49,13 @@
 }
 /* Squared box for post content */
 .post-content-box {
-  height: 100%; /* Match height of .write-post-container minus 10vh margin */
+  width: 100%;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+  padding: 15px;
+  background-color:rgba(207, 186, 238, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  height: 76.5vh;
   display: flex;
   justify-content: center; /* Center the post-box horizontally */
   align-items: flex-start; /* Align the post-box to the top */
@@ -70,7 +66,6 @@
 .post-box {
   border: 1px solid #e1e4e8;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   padding: 15px;
   background-color: #fff;
   transition: transform 2s ease;
@@ -189,11 +184,10 @@
   justify-content: space-between;
 }
 
-.preview-action-button {
+.action-button {
   background: none;
-  font-weight: bold;
   border: none;
-  color: #000000;
+  color: #555;
   font-size: 14px;
   cursor: pointer;
 }

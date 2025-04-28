@@ -1,49 +1,31 @@
+/* General Carousel Page Styling for Paris */
+.preview_carousel-page.paris-pages {
+    background-color: #f8f8f8; /* Soft white */
+    border: 1px solid #b0c4de; /* Light steel blue */
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(176, 196, 222, 0.5); /* Subtle shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
 
-  .preview_carousel-page.paris-pages h2 {
-    /* If you want a fallback color or bigger size than the default: */
-    color: var(--textColor, #483d8b); /* dark slate blue fallback */
-    font-size: calc(var(--baseFontSize, 16px) + 10px);
-    font-family: var(--titleFont, 'Georgia'), serif;
+/* Heading Styling */
+.preview_carousel-page.paris-pages h2 {
+    font-family: 'Georgia', serif;
+    font-size: 26px;
+    font-weight: bold;
+    color: #483d8b; /* Dark slate blue */
     margin-bottom: 10px;
-  }
-  
-  /* Override paragraph <p> for paris */
-  .preview_carousel-page.paris-pages p {
-    font-size: calc(var(--baseFontSize, 16px) + 2px);
-    color: var(--textColor, #696969); /* dim gray fallback */
-    font-family: var(--bodyFont, 'Times New Roman'), serif;
+}
+
+/* Text Styling */
+.preview_carousel-page.paris-pages p {
+    font-family: 'Times New Roman', serif;
+    font-size: 18px;
+    color: #696969; /* Dim gray */
     line-height: 1.6;
     margin-bottom: 20px;
-  }
-  
-  /* If you want a special .quotes-box style for Paris */
-  .preview_carousel-page.paris-pages .quotes-box {
-    background-color: rgba(0, 0, 0, 0.05);
-    padding: 10px;
-    border-radius: 8px;
-  }
-  
-  /* Next arrow for Intro page in paris */
-  .preview_carousel-page.paris-pages .next-arrow {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-    background-color: var(--arrowColor, #d3d3d3);
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  /* Brand icon bottom-left for Paris */
-  .preview_carousel-page.paris-pages .brand-icon {
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-    font-size: calc(var(--baseFontSize, 16px) - 2px);
-    color: var(--textColor, #696969);
-  }
-  
+}

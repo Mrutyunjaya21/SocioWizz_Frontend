@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import '../Styles/SignIn.css';
 import linkedinLogo from '../Assets/linkedin_logo.png';
 import xLogo from '../Assets/x_logo.png';
@@ -8,37 +6,11 @@ import googleLogo from '../Assets/google_logo.png';
 import { useGoogleLogin } from '@react-oauth/google';
 
 const SignInPage = () => {
-    const navigate = useNavigate();
     const [isSignUp, setIsSignUp] = useState(false);
 
     const initiateGoogleLogin = useGoogleLogin({
         onSuccess: async (response) => {
-            try {
-                const res = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
-                    headers: { Authorization: `Bearer ${response.access_token}` },
-                });
-                const email = res.data.email;
-    
-                // Save email in a cookie
-                document.cookie = `email_cookie=${email}; path=/`;
-    
-                // Check user status in the database
-                const statusResponse = await axios.post('http://localhost:8000/check-user-status/', { email });
-                const { status } = statusResponse.data;
-    
-                // Navigate based on the status
-                if (status === 'mapped') {
-                    navigate('/post');
-                } else if (status === 'no_linkedin') {
-                    navigate('/link');
-                } else if (status === 'no_email') {
-                    // Save email if not already in the database
-                    await axios.post('http://localhost:8000/save-email/', { email });
-                    navigate('/form');
-                }
-            } catch (error) {
-                console.error(error);
-            }
+            // Handle Google login logic here
         },
     });
 
